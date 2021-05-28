@@ -35,35 +35,35 @@ public class Word extends Primitive {
     }
 
     public Word getLemma() {
-        return (Word) attributes.get(ATTRIBUTE_LEMMA);
+        return (Word) get(ATTRIBUTE_LEMMA);
     }
 
     public String getLemmaWord() {
-        return attributes.get(ATTRIBUTE_LEMMA).getName();
+        return get(ATTRIBUTE_LEMMA).getName();
     }
 
     public void setLemma(Word lemma) {
-        attributes.insert(ATTRIBUTE_LEMMA, lemma);
+        getAttributes().insert(ATTRIBUTE_LEMMA, lemma);
     }
 
     public Word getTag() {
-        return (Word) attributes.get(ATTRIBUTE_TAG);
+        return (Word) get(ATTRIBUTE_TAG);
     }
 
     public String getTagWord() {
-        return attributes.get(ATTRIBUTE_TAG).getName();
+        return get(ATTRIBUTE_TAG).getName();
     }
 
     public void setTag(Word tag) {
-        attributes.insert(ATTRIBUTE_TAG, tag);
+        getAttributes().insert(ATTRIBUTE_TAG, tag);
     }
 
     public void setTag(String tagName) {
-        attributes.insert(ATTRIBUTE_TAG, new Word(tagName));
+        getAttributes().insert(ATTRIBUTE_TAG, new Word(tagName));
     }
 
     public Word getWordType() {
-        return (Word) attributes.get(ATTRIBUTE_WORD_TYPE);
+        return (Word) get(ATTRIBUTE_WORD_TYPE);
     }
 
     public String getWordTypeText() {
@@ -71,6 +71,6 @@ public class Word extends Primitive {
     }
 
     public void setWordType(Word Type) {
-        attributes.insert(ATTRIBUTE_WORD_TYPE, Type);
+        getAttributes().insert(ATTRIBUTE_WORD_TYPE, Type);
     }
 }

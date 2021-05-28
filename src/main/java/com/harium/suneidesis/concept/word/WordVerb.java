@@ -15,19 +15,19 @@ public class WordVerb extends Word {
 	}
 	
 	public Word getPrepositions() {
-		return (Word) attributes.get(ATTRIBUTE_PREPOSITIONS);
+		return (Word) get(ATTRIBUTE_PREPOSITIONS);
 	}
 
 	public String getPrepositionsWord() {
-		return attributes.get(ATTRIBUTE_PREPOSITIONS).getName();
+		return get(ATTRIBUTE_PREPOSITIONS).getName();
 	}
 
 	public void setPrepositions(Word gender) {
-		attributes.insert(ATTRIBUTE_PREPOSITIONS, gender);
+		getAttributes().insert(ATTRIBUTE_PREPOSITIONS, gender);
 	}
 
 	public Word getTransitivity() {
-		return (Word) attributes.get(ATTRIBUTE_TRANSITIVITY);
+		return (Word) get(ATTRIBUTE_TRANSITIVITY);
 	}
 
 	public String getTransitivityWord() {
@@ -35,6 +35,6 @@ public class WordVerb extends Word {
 	}
 
 	public void setTransitivity(Word Transitivity) {
-		attributes.insert(ATTRIBUTE_TRANSITIVITY, Transitivity);
+		getAttributes().insert(ATTRIBUTE_TRANSITIVITY, Transitivity);
 	}
 }

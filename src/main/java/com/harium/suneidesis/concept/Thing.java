@@ -1,36 +1,34 @@
 package com.harium.suneidesis.concept;
 
 import com.harium.suneidesis.concept.attribute.Attributes;
-import com.harium.suneidesis.concept.primitive.Text;
 
 import java.util.Objects;
 
 public class Thing {
 
-	protected final Attributes attributes = new Attributes();
+	private Attributes attributes;
 
 	protected Thing() {
 		super();
 	}
 
 	public Attributes getAttributes() {
+		if (attributes == null) {
+			attributes = new Attributes();
+		}
 		return attributes;
 	}
 
 	public String getName() {
-		return attributes.getValueContent();
-	}
-
-	public Concept getNameConcept() {
-		return attributes.getValue();
+		return getAttributes().getValue();
 	}
 
 	public void setName(String name) {
-		attributes.setValue(name);
+		getAttributes().setNameText(name);
 	}
 
-	public void setNameConcept(Concept nameConcept) {
-		attributes.setNameConcept(nameConcept);
+	public Concept getNameConcept() {
+		return attributes.getValueConcept();
 	}
 
 	@Override

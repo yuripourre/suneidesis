@@ -17,7 +17,7 @@ public class Quantifier {
     }
 
     public Concept getQuantifier() {
-        return concept.attributes.get(ATTRIBUTE_QUANTIFIER);
+        return concept.getAttributes().get(ATTRIBUTE_QUANTIFIER);
     }
 
     public Quantifier quantifier(String modifier) {
@@ -26,7 +26,7 @@ public class Quantifier {
     }
 
     public static void setQuantifier(Concept concept, String quantifier) {
-        concept.attributes.insert(ATTRIBUTE_QUANTIFIER, new Concept(quantifier));
+        concept.getAttributes().insert(ATTRIBUTE_QUANTIFIER, new Concept(quantifier));
     }
 
 }

@@ -19,15 +19,18 @@ public class PersistentKnowledgeBaseTest {
 
     @Test
     public void testInsert() {
-        Concept appleTree = new Concept("apple tree").id("123");
-        appleTree.set("fruit", new Concept("apple"));
+        Concept appleTree = new Concept("apple tree").id("1");
+        Concept apple = new Concept("apple").id("2");
+        appleTree.set("fruit", apple);
 
-        persistentKnowledgeBase.insert("randomKey", appleTree);
+        persistentKnowledgeBase.insert("randomKey1", appleTree);
+        persistentKnowledgeBase.insert("randomKey2", apple);
 
-        Concept result = persistentKnowledgeBase.get("123");
-        assertEquals("123", result.getIdText());
+        Concept result = persistentKnowledgeBase.get("1");
+        assertEquals("1", result.getIdText());
         assertEquals(appleTree.getName(), result.getName());
         assertTrue(result.hasKey("fruit"));
+        assertEquals("2", result.get("fruit").getIdText());
     }
 
 }

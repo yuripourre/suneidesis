@@ -22,18 +22,18 @@ public class ConceptList extends Concept {
     }
 
     public void add(Concept concept) {
-        attributes.insert(Integer.toString(size), concept);
+        getAttributes().insert(Integer.toString(size), concept);
         size++;
     }
 
     public void remove(Concept concept) {
-        if (attributes.remove(concept)) {
+        if (getAttributes().remove(concept)) {
             pack();
         }
     }
 
     public void removeByName(String key) {
-        if (attributes.removeByName(key)) {
+        if (getAttributes().removeByName(key)) {
             pack();
         }
     }
@@ -42,11 +42,11 @@ public class ConceptList extends Concept {
         int realLength = size;
         // Rearrange concepts so they can be contiguous
         for (int i = 0; i < size; i++) {
-            if (!attributes.contains(Integer.toString(i))) {
+            if (!getAttributes().contains(Integer.toString(i))) {
                 realLength--;
                 for (int k = i + 1; k < size; k++) {
-                    Concept concept = attributes.get(Integer.toString(k));
-                    attributes.insert(Integer.toString(k - 1), concept);
+                    Concept concept = get(Integer.toString(k));
+                    getAttributes().insert(Integer.toString(k - 1), concept);
                 }
             }
         }
@@ -60,7 +60,7 @@ public class ConceptList extends Concept {
         for (int i = 0; i < size; i++) {
             String key = Integer.toString(i);
 
-            Concept item = attributes.get(key);
+            Concept item = get(key);
             if (!item.isUnknown()) {
                 items.add(item);
             }
@@ -70,7 +70,7 @@ public class ConceptList extends Concept {
 
     public void clear() {
         for (Concept concept : getAll()) {
-            attributes.remove(concept);
+            getAttributes().remove(concept);
         }
         size = 0;
     }

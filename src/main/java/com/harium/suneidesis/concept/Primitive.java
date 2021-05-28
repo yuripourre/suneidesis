@@ -9,56 +9,51 @@ public class Primitive extends Concept {
 
     public Primitive(String value) {
         super(ConceptType.DATA, DataType.PRIMITIVE);
-        this.value = value;
+        setValue(value);
     }
 
     public Primitive(String value, Concept type) {
         super(type, DataType.PRIMITIVE);
-        this.value = value;
+        setValue(value);
     }
 
-    @Override
-    public String getName() {
-        return value;
+    private void setValue(String value) {
+        this.value = value;
     }
 
     public String getValue() {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     public void setValue(boolean value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(byte value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(char value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(double value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(float value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(int value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(long value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 
     public void setValue(short value) {
-        this.value = String.valueOf(value);
+        setValue(String.valueOf(value));
     }
 }

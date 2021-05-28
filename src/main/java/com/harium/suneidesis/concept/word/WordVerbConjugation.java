@@ -12,19 +12,19 @@ public class WordVerbConjugation extends Word {
 	}
 	
 	public Word getPerson() {
-		return (Word) attributes.get(ATTRIBUTE_PERSON);
+		return (Word) get(ATTRIBUTE_PERSON);
 	}
 
 	public String getPersonWord() {
-		return attributes.get(ATTRIBUTE_PERSON).getName();
+		return get(ATTRIBUTE_PERSON).getName();
 	}
 
 	public void setPerson(Word gender) {
-		attributes.insert(ATTRIBUTE_PERSON, gender);
+		getAttributes().insert(ATTRIBUTE_PERSON, gender);
 	}
 
 	public Word getTense() {
-		return (Word) attributes.get(ATTRIBUTE_TENSE);
+		return (Word) get(ATTRIBUTE_TENSE);
 	}
 
 	public String getTenseWord() {
@@ -32,6 +32,6 @@ public class WordVerbConjugation extends Word {
 	}
 
 	public void setTense(Word Tense) {
-		attributes.insert(ATTRIBUTE_TENSE, Tense);
+		getAttributes().insert(ATTRIBUTE_TENSE, Tense);
 	}
 }

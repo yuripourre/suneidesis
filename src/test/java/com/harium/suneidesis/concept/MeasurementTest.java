@@ -12,7 +12,7 @@ public class MeasurementTest {
         Measurement measurement = new Measurement("5", "m");
         assertEquals("5", measurement.getValueText());
 
-        assertTrue(does(measurement.getValue()).is(new Concept("5")));
+        assertTrue(does(measurement.getValueConcept()).is(new Concept("5")));
         assertTrue(does(measurement.getUnit()).is(new Concept("m")));
 
         Measurement toCompare = new Measurement("5", "m");

@@ -11,14 +11,14 @@ public class WordPreposition extends Word {
 	}
 
 	public Word getUse() {
-		return (Word) attributes.get(ATTRIBUTE_USE);
+		return (Word) get(ATTRIBUTE_USE);
 	}
 
 	public String getUseWord() {
-		return attributes.get(ATTRIBUTE_USE).getName();
+		return get(ATTRIBUTE_USE).getName();
 	}
 
 	public void setUse(Word use) {
-		attributes.insert(ATTRIBUTE_USE, use);
+		getAttributes().insert(ATTRIBUTE_USE, use);
 	}
 }

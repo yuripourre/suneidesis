@@ -40,11 +40,11 @@ public class Concept extends Thing {
 	}
 
 	public Concept getType() {
-		return attributes.get(ATTRIBUTE_TYPE);
+		return getAttributes().get(ATTRIBUTE_TYPE);
 	}
 
 	public Concept type(Concept type) {
-		attributes.insert(ATTRIBUTE_TYPE, type);
+		getAttributes().insert(ATTRIBUTE_TYPE, type);
 		return this;
 	}
 
@@ -53,31 +53,31 @@ public class Concept extends Thing {
 	}
 
 	public Concept getId() {
-		return attributes.get(ATTRIBUTE_ID);
+		return getAttributes().get(ATTRIBUTE_ID);
 	}
 
 	public Concept id(String id) {
 		this.id = id;
-		attributes.insert(ATTRIBUTE_ID, new Text(id));
+		getAttributes().insert(ATTRIBUTE_ID, new Text(id));
 		return this;
 	}
 
 	public DataType getDataType() {
-		return attributes.getDataType();
+		return getAttributes().getDataType();
 	}
 
 	public Concept dataType(DataType dataType) {
-		this.attributes.setDataType(dataType);
+		getAttributes().setDataType(dataType);
 		return this;
 	}
 
 	public Concept is(Concept concept) {
-		this.attributes.is(concept);
+		getAttributes().is(concept);
 		return this;
 	}
 
 	public Concept can(Action action) {
-		this.attributes.can(action);
+		getAttributes().can(action);
 		return this;
 	}
 
@@ -86,16 +86,16 @@ public class Concept extends Thing {
 	}
 
 	public boolean hasKey(String key) {
-		return this.attributes.contains(key);
+		return getAttributes().contains(key);
 	}
 
 	public Concept set(String key, Concept property) {
-		this.attributes.insert(key, property);
+		getAttributes().insert(key, property);
 		return this;
 	}
 
 	public Concept hasQuantity(Concept property, Measurement measurement) {
-		this.attributes.hasPart(property, measurement);
+		getAttributes().hasPart(property, measurement);
 		return this;
 	}
 
@@ -112,11 +112,11 @@ public class Concept extends Thing {
 	}
 
 	public Concept get(String key) {
-		return this.attributes.get(key);
+		return getAttributes().get(key);
 	}
 
 	public Concept isLocatedAt(Place place) {
-		this.attributes.isLocatedAt(place);
+		getAttributes().isLocatedAt(place);
 		return this;
 	}
 

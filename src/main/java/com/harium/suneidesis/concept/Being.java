@@ -26,19 +26,19 @@ public class Being extends Concept {
     }
 
     public Concept getGender() {
-        return attributes.get(ATTRIBUTE_GENDER);
+        return get(ATTRIBUTE_GENDER);
     }
 
     public Ancestry getAncestry() {
-        return (Ancestry) attributes.get(ATTRIBUTE_ANCESTRY);
+        return (Ancestry) get(ATTRIBUTE_ANCESTRY);
     }
 
     public void setAncestry(Ancestry ancestry) {
-        this.attributes.insert(ATTRIBUTE_ANCESTRY, ancestry);
+        this.getAttributes().insert(ATTRIBUTE_ANCESTRY, ancestry);
     }
 
     public void setGender(Concept gender) {
-        this.attributes.insert(ATTRIBUTE_GENDER, gender);
+        this.getAttributes().insert(ATTRIBUTE_GENDER, gender);
     }
 
 }

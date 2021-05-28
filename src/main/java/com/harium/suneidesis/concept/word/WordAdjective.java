@@ -11,15 +11,15 @@ public class WordAdjective extends Word {
 	}
 	
 	public Word getGender() {
-		return (Word) attributes.get(ATTRIBUTE_GENDER);
+		return (Word) get(ATTRIBUTE_GENDER);
 	}
 
 	public String getGenderWord() {
-		return attributes.get(ATTRIBUTE_GENDER).getName();
+		return get(ATTRIBUTE_GENDER).getName();
 	}
 
 	public void setGender(Word gender) {
-		attributes.insert(ATTRIBUTE_GENDER, gender);
+		getAttributes().insert(ATTRIBUTE_GENDER, gender);
 	}
 
 }
