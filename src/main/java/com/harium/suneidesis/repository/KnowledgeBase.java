@@ -154,4 +154,6 @@ public abstract class KnowledgeBase implements Repository<Concept> {
     public void addListener(RepositoryListener listener) {
         listeners.add(listener);
     }
+
+    public abstract void clear();
 }

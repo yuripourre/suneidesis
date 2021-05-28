@@ -1,6 +1,7 @@
 package com.harium.suneidesis.concept;
 
 import com.harium.suneidesis.concept.attribute.Attributes;
+import com.harium.suneidesis.concept.primitive.Text;
 
 import java.util.Objects;
 

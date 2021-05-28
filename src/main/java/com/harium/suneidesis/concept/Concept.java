@@ -11,6 +11,8 @@ public class Concept extends Thing {
 	public static final Concept UNKNOWN = new Concept(ConceptType.UNKNOWN);
 	public static final Concept SECRET = new Concept(ConceptType.SECRET);
 
+	private String id;
+
 	public Concept() {
 		super();
 	}
@@ -47,7 +49,7 @@ public class Concept extends Thing {
 	}
 
 	public String getIdText() {
-		return getId().getName();
+		return id;
 	}
 
 	public Concept getId() {
@@ -55,6 +57,7 @@ public class Concept extends Thing {
 	}
 
 	public Concept id(String id) {
+		this.id = id;
 		attributes.insert(ATTRIBUTE_ID, new Text(id));
 		return this;
 	}

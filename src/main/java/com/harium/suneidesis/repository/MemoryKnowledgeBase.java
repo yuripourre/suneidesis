@@ -56,4 +56,9 @@ public class MemoryKnowledgeBase extends KnowledgeBase {
             add(concept);
         }
     }
+
+    @Override
+    public void clear() {
+        data.clear();
+    }
 }

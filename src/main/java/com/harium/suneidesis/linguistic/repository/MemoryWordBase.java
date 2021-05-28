@@ -42,6 +42,11 @@ public class MemoryWordBase extends WordKnowledgeBase implements WordRepository 
     }
 
     @Override
+    public void clear() {
+        delegate.clear();
+    }
+
+    @Override
     public Map<String, Concept> getAll() {
         return delegate.getAll();
     }
